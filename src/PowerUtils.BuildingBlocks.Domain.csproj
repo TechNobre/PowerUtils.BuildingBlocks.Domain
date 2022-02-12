@@ -1,0 +1,87 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <ProjectGuid>e7c7d504-f4c1-4c07-ab81-cdb08c4213f8</ProjectGuid>
+
+    <!-- Assembly and projecto details -->
+    <!-- https://docs.microsoft.com/en-us/dotnet/standard/frameworks -->
+    <TargetFrameworks>net6.0;net5.0;netstandard2.1;netcoreapp3.1</TargetFrameworks>
+
+    <AssemblyName>PowerUtils.BuildingBlocks.Domain</AssemblyName>
+    <RootNamespace>PowerUtils.BuildingBlocks.Domain</RootNamespace>
+
+
+    <!-- Package details -->
+    <PackageId>PowerUtils.BuildingBlocks.Domain</PackageId>
+    <title>PowerUtils.BuildingBlocks.Domain</title>
+    <Product>PowerUtils.BuildingBlocks.Domain</Product>
+    <Version>1.0.0</Version>
+
+    <Authors>Nelson Nobre</Authors>
+    <Company>TechNobre</Company>
+
+    <License>MIT</License>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <Copyright>Copyright © 2022 by TechNobre</Copyright>
+
+    <Description>Helpers to create the domain layers</Description>
+    <PackageReleaseNotes>
+      Start project
+    </PackageReleaseNotes>
+    <Summary>Helpers to create the domain layers</Summary>
+    <PackageTags>PowerUtils;Utils;Helpers;DDD;Domain;CleanArchitecture;Entity;ValueObject</PackageTags>
+    <RepositoryUrl>https://github.com/TechNobre/PowerUtils.BuildingBlocks.Domain</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/TechNobre/PowerUtils.BuildingBlocks.Domain</PackageProjectUrl>
+    <NeutralLanguage>en-GB</NeutralLanguage>
+
+    <PackageOutputPath>bin\</PackageOutputPath>
+  </PropertyGroup>
+
+
+  <!-- DOCUMENTATION -->
+  <PropertyGroup>
+    <DocumentationFile>bin\PowerUtils.BuildingBlocks.Domain.xml</DocumentationFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn> <!-- Prevent XML documentation warnings -->
+  </PropertyGroup>
+
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <DefineConstants>RELEASE;TRACE</DefineConstants>
+    <ErrorReport>none</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+
+
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.1' ">
+    <DefineConstants>NETSTANDARD;NETSTANDARD2_1</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.1' ">
+    <DefineConstants>NETCOREAPP;NETCOREAPP3_1</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net5.0' ">
+    <DefineConstants>NET;NET5</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net6.0' ">
+    <DefineConstants>NET;NET6</DefineConstants>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <None Include="..\LICENSE" Pack="true" PackagePath="" />
+  </ItemGroup>
+
+
+</Project>

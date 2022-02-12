@@ -1,0 +1,2 @@
+dotnet build -c Release ./tests/PowerUtils.BuildingBlocks.Domain.Benchmarks/PowerUtils.BuildingBlocks.Domain.Benchmarks.csproj
+dotnet run -p ./tests/PowerUtils.BuildingBlocks.Domain.Benchmarks/PowerUtils.BuildingBlocks.Domain.Benchmarks.csproj -c Release 
