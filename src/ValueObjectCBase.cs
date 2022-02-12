@@ -30,8 +30,8 @@ namespace PowerUtils.BuildingBlocks.Domain
             return GetEqualityComponents().SequenceEqual(other.GetEqualityComponents());
         }
 
-        public override bool Equals(object other)
-            => Equals(other as ValueObjectCBase);
+        public override bool Equals(object obj)
+            => Equals(obj as ValueObjectCBase);
 
         public override int GetHashCode()
             => GetEqualityComponents()
