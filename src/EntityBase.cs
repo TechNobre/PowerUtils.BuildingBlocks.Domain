@@ -35,8 +35,8 @@
             return Id.Equals(other.Id);
         }
 
-        public override bool Equals(object other)
-            => Equals(other as EntityBase<TId>);
+        public override bool Equals(object obj)
+            => Equals(obj as EntityBase<TId>);
 
         /// <summary>
         /// Equality operator
