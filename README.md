@@ -7,7 +7,7 @@ Helpers to create the domain layers
 
 [![NuGet](https://img.shields.io/nuget/v/PowerUtils.BuildingBlocks.Domain.svg)](https://www.nuget.org/packages/PowerUtils.BuildingBlocks.Domain)
 [![Nuget](https://img.shields.io/nuget/dt/PowerUtils.BuildingBlocks.Domain.svg)](https://www.nuget.org/packages/PowerUtils.BuildingBlocks.Domain)
-[![License: MIT](https://img.shields.io/github/license/ofpinewood/http-exceptions.svg)](https://github.com/TechNobre/PowerUtils.BuildingBlocks.Domain/blob/main/LICENSE)
+[![License: MIT](https://img.shields.io/github/license/TechNobre/PowerUtils.BuildingBlocks.Domain.svg)](https://github.com/TechNobre/PowerUtils.BuildingBlocks.Domain/blob/main/LICENSE)
 
 
 
