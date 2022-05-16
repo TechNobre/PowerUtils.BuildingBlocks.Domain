@@ -7,7 +7,7 @@ Helpers to create the domain layers
 
 [![NuGet](https://img.shields.io/nuget/v/PowerUtils.BuildingBlocks.Domain.svg)](https://www.nuget.org/packages/PowerUtils.BuildingBlocks.Domain)
 [![Nuget](https://img.shields.io/nuget/dt/PowerUtils.BuildingBlocks.Domain.svg)](https://www.nuget.org/packages/PowerUtils.BuildingBlocks.Domain)
-[![License: MIT](https://img.shields.io/github/license/ofpinewood/http-exceptions.svg)](https://github.com/TechNobre/PowerUtils.BuildingBlocks.Domain/blob/main/LICENSE)
+[![License: MIT](https://img.shields.io/github/license/TechNobre/PowerUtils.BuildingBlocks.Domain.svg)](https://github.com/TechNobre/PowerUtils.BuildingBlocks.Domain/blob/main/LICENSE)
 
 
 
@@ -31,6 +31,7 @@ Helpers to create the domain layers
   - [ValueObjectBase.Equals()](#ValueObjectBase.Equals)
   - [ValueObjectBase.operator ==](#ValueObjectBase.EqualityOperator)
   - [ValueObjectBase.operator !=](#ValueObjectBase.InequalityOperator)
+- [Specification](#Specification)
 
 
 
@@ -225,6 +226,32 @@ var address2 = new Address("Lisbon", "Portugal");
 
 // result = false
 var result = address1 != address2;
+```
+
+
+
+### Specification <a name="Specification"></a>
+```csharp
+public class AvailableProductSpec : Specification<Product>
+{
+    public override Expression<Func<Product, bool>> ToExpression()
+        => product => !product.Deleted
+                    && product.Quantity > 0;
+}
+...
+...
+var product = new Product();
+
+if(AvailableProductSpec().IsSatisfiedBy(product))
+{
+    ...
+}
+...
+...
+if(AvailableProductSpec().IsNotSatisfiedBy(product))
+{
+    ...
+}
 ```
 
 
