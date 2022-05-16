@@ -31,6 +31,7 @@ Helpers to create the domain layers
   - [ValueObjectBase.Equals()](#ValueObjectBase.Equals)
   - [ValueObjectBase.operator ==](#ValueObjectBase.EqualityOperator)
   - [ValueObjectBase.operator !=](#ValueObjectBase.InequalityOperator)
+- [Specification](#Specification)
 
 
 
@@ -225,6 +226,32 @@ var address2 = new Address("Lisbon", "Portugal");
 
 // result = false
 var result = address1 != address2;
+```
+
+
+
+### Specification <a name="Specification"></a>
+```csharp
+public class AvailableProductSpec : Specification<Product>
+{
+    public override Expression<Func<Product, bool>> ToExpression()
+        => product => !product.Deleted
+                    && product.Quantity > 0;
+}
+...
+...
+var product = new Product();
+
+if(AvailableProductSpec().IsSatisfiedBy(product))
+{
+    ...
+}
+...
+...
+if(AvailableProductSpec().IsNotSatisfiedBy(product))
+{
+    ...
+}
 ```
 
 
