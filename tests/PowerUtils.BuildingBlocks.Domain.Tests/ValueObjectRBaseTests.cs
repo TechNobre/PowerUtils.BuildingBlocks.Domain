@@ -2,11 +2,10 @@
 
 namespace PowerUtils.BuildingBlocks.Domain.Tests;
 
-[Trait("Category", "ValueObjects")]
 public class ValueObjectRBaseTests
 {
-    [Fact(DisplayName = "Equality operator, both value objects are null - Should return true")]
-    public void EqualityOperator_BothNULL_True()
+    [Fact]
+    public void BothNULL_EqualityOperator_True()
     {
         // Arrange
         FakeValueObjectR left = null;
@@ -22,8 +21,8 @@ public class ValueObjectRBaseTests
             .BeTrue();
     }
 
-    [Fact(DisplayName = "Equality operator, only left value object is null - Should return false")]
-    public void EqualityOperator_LeftNULL_False()
+    [Fact]
+    public void LeftNULL_EqualityOperator_False()
     {
         // Arrange
         FakeValueObjectR left = null;
@@ -39,8 +38,8 @@ public class ValueObjectRBaseTests
             .BeFalse();
     }
 
-    [Fact(DisplayName = "Equality operator, only right value object is null - Should return false")]
-    public void EqualityOperator_RightNULL_False()
+    [Fact]
+    public void RightNULL_EqualityOperator_False()
     {
         // Arrange
         var left = new FakeValueObjectR(12, "Fake");
@@ -56,8 +55,8 @@ public class ValueObjectRBaseTests
             .BeFalse();
     }
 
-    [Fact(DisplayName = "Equality operator, all fiels are null - Should return true")]
-    public void EqualityOperator_AllFieldsNull_True()
+    [Fact]
+    public void AllFieldsNull_EqualityOperator_True()
     {
         // Arrange
         var left = new FakeValueObjectR();
@@ -73,8 +72,8 @@ public class ValueObjectRBaseTests
             .BeTrue();
     }
 
-    [Fact(DisplayName = "Equals method, all fiels are null - Should return true")]
-    public void EqualsMethod_AllFieldsNull_True()
+    [Fact]
+    public void AllFieldsNull_EqualsMethod_True()
     {
         // Arrange
         var left = new FakeValueObjectR();
@@ -90,8 +89,8 @@ public class ValueObjectRBaseTests
             .BeTrue();
     }
 
-    [Fact(DisplayName = "Equality operator, only left fiels are null - Should return false")]
-    public void EqualityOperator_LeftFieldsNull_False()
+    [Fact]
+    public void LeftFieldsNull_EqualityOperator_False()
     {
         // Arrange
         var left = new FakeValueObjectR();
@@ -107,8 +106,8 @@ public class ValueObjectRBaseTests
             .BeFalse();
     }
 
-    [Fact(DisplayName = "Equality operator, only right fiels are null - Should return false")]
-    public void EqualityOperator_RightFieldsNull_False()
+    [Fact]
+    public void RightFieldsNull_EqualityOperator_False()
     {
         // Arrange
         var left = new FakeValueObjectR(12, "Fake");
@@ -124,8 +123,8 @@ public class ValueObjectRBaseTests
             .BeFalse();
     }
 
-    [Fact(DisplayName = "Equals method, only left fiels are null - Should return false")]
-    public void EqualsMethod_LeftFieldsNull_False()
+    [Fact]
+    public void LeftFieldsNull_EqualsMethod_False()
     {
         // Arrange
         var left = new FakeValueObjectR();
@@ -141,8 +140,8 @@ public class ValueObjectRBaseTests
             .BeFalse();
     }
 
-    [Fact(DisplayName = "Equals method, only right fiels are null - Should return false")]
-    public void EqualsMethod_RightValues_NotSetted()
+    [Fact]
+    public void RightValues_EqualsMethod_NotSetted()
     {
         // Arrange
         var left = new FakeValueObjectR(12, "Fake");
@@ -158,8 +157,8 @@ public class ValueObjectRBaseTests
             .BeFalse();
     }
 
-    [Fact(DisplayName = "Equality operator, all fiels are differents - Should return false")]
-    public void EqualityOperator_AllFieldsDifferents_False()
+    [Fact]
+    public void AllFieldsDifferents_EqualityOperator_False()
     {
         // Arrange
         var left = new FakeValueObjectR(13, "Fake left");
@@ -175,8 +174,8 @@ public class ValueObjectRBaseTests
             .BeFalse();
     }
 
-    [Fact(DisplayName = "Equals method, all fiels are differents - Should return false")]
-    public void EqualsMethod_AllFieldsDifferents_False()
+    [Fact]
+    public void AllFieldsDifferents_EqualsMethod_False()
     {
         // Arrange
         var left = new FakeValueObjectR(13, "Fake left");
@@ -192,8 +191,8 @@ public class ValueObjectRBaseTests
             .BeFalse();
     }
 
-    [Fact(DisplayName = "Equality operator, all fields are the same - Should return true")]
-    public void EqualityOperator_AllFieldAreSame_True()
+    [Fact]
+    public void AllFieldAreSame_EqualityOperator_True()
     {
         // Arrange
         var left = new FakeValueObjectR(13, "Fake");
@@ -209,8 +208,8 @@ public class ValueObjectRBaseTests
             .BeTrue();
     }
 
-    [Fact(DisplayName = "Equals method, all fields are the same - Should return true")]
-    public void EqualsMethod_AllFieldAreSame_True()
+    [Fact]
+    public void AllFieldAreSame_EqualsMethod_True()
     {
         // Arrange
         var left = new FakeValueObjectR(13, "Fake");
@@ -226,8 +225,8 @@ public class ValueObjectRBaseTests
             .BeTrue();
     }
 
-    [Fact(DisplayName = "Difference operator, all fields are different - Should return true")]
-    public void DifferenceOperator_AllFieldAreDifferents_True()
+    [Fact]
+    public void AllFieldAreDifferents_DifferenceOperator_True()
     {
         // Arrange
         var left = new FakeValueObjectR(13, "Fake left");
@@ -243,8 +242,8 @@ public class ValueObjectRBaseTests
             .BeTrue();
     }
 
-    [Fact(DisplayName = "Difference operator, all fields are the same - Should return false")]
-    public void DifferenceOperator_AllFieldAreSame_False()
+    [Fact]
+    public void AllFieldAreSame_DifferenceOperator_False()
     {
         // Arrange
         var left = new FakeValueObjectR(13, "Fake");
@@ -260,8 +259,8 @@ public class ValueObjectRBaseTests
             .BeFalse();
     }
 
-    [Fact(DisplayName = "Conpare value object with different nested value object - Should return false")]
-    public void EqualityOperator_DifferentNestedValueObject_False()
+    [Fact]
+    public void DifferentNestedValueObject_EqualityOperator_False()
     {
         // Arrange
         var left = new FakeValueObjectR(13, "Fake", 12, 13);
@@ -277,8 +276,8 @@ public class ValueObjectRBaseTests
             .BeFalse();
     }
 
-    [Fact(DisplayName = "Conpare value object with equals nested value object - Should return true")]
-    public void EqualityOperator_EqualsNestedValueObject_True()
+    [Fact]
+    public void EqualsNestedValueObject_EqualityOperator_True()
     {
         // Arrange
         var left = new FakeValueObjectR(13, "Fake", 12, 13);
@@ -294,8 +293,8 @@ public class ValueObjectRBaseTests
             .BeTrue();
     }
 
-    [Fact(DisplayName = "Test an ValueObject valid - Should not return anything")]
-    public void Validate_Valid_NoException()
+    [Fact]
+    public void ValidValueObject_Validate_NoException()
     {
         // Arrange
         var fake = new FakeValueObjectRWithValidate("Fake");
@@ -310,8 +309,8 @@ public class ValueObjectRBaseTests
             .BeNull();
     }
 
-    [Fact(DisplayName = "Test an ValueObject wihtout validate setted - Should not return anything")]
-    public void Validate_EntityNotSetValidate_Void()
+    [Fact]
+    public void EntityNotSetValidate_Validate_Void()
     {
         // Arrange
         var fake = new FakeValueObjectR(13, "Fake");
@@ -326,8 +325,8 @@ public class ValueObjectRBaseTests
             .BeNull();
     }
 
-    [Fact(DisplayName = "Test an ValueObject invalid - Should return an exception")]
-    public void Validate_Invalid_void()
+    [Fact]
+    public void InvalidValueObject_Validate_Void()
     {
         // Arrange
         var fake = new FakeValueObjectRWithValidate(null);

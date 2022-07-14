@@ -3,11 +3,10 @@ using PowerUtils.BuildingBlocks.Domain.Tests.Fakes.Entities;
 
 namespace PowerUtils.BuildingBlocks.Domain.Tests;
 
-[Trait("Category", "Entities")]
 public class EntityBaseTests
 {
-    [Fact(DisplayName = "Equality operator, both entities are null - Should return true")]
-    public void EqualityOperator_BothNULL_True()
+    [Fact]
+    public void BothNULL_EqualityOperator_True()
     {
         // Arrange
         FakeEntity left = null;
@@ -23,8 +22,8 @@ public class EntityBaseTests
             .BeTrue();
     }
 
-    [Fact(DisplayName = "Equality operator, only left entity is null - Should return false")]
-    public void EqualityOperator_LeftNULL_False()
+    [Fact]
+    public void LeftNULL_EqualityOperator_False()
     {
         // Arrange
         FakeEntity left = null;
@@ -44,8 +43,8 @@ public class EntityBaseTests
             .BeFalse();
     }
 
-    [Fact(DisplayName = "Equality operator, only right entity is null - Should return false")]
-    public void EqualityOperator_RightNULL_False()
+    [Fact]
+    public void RightNULL_EqualityOperator_False()
     {
         // Arrange
         var left = new FakeEntity
@@ -65,8 +64,8 @@ public class EntityBaseTests
             .BeFalse();
     }
 
-    [Fact(DisplayName = "Equality operator, both entities have null Ids - Should return true")]
-    public void EqualityOperator_BothIdsNULL_True()
+    [Fact]
+    public void BothIdsNULL_EqualityOperator_True()
     {
         // Arrange
         var left = new FakeEntity
@@ -89,8 +88,8 @@ public class EntityBaseTests
             .BeTrue();
     }
 
-    [Fact(DisplayName = "Equals method, both entities have null Ids - Should return true")]
-    public void EqualsMethod_BothIdsNULL_True()
+    [Fact]
+    public void BothIdsNULL_EqualsMethod_True()
     {
         // Arrange
         var left = new FakeEntity
@@ -113,8 +112,8 @@ public class EntityBaseTests
             .BeTrue();
     }
 
-    [Fact(DisplayName = "Equality operator, only right entity has null Id - Should return false")]
-    public void EqualityOperator_LeftIdNULL_False()
+    [Fact]
+    public void LeftIdNULL_EqualityOperator_False()
     {
         // Arrange
         var left = new FakeEntity
@@ -137,8 +136,8 @@ public class EntityBaseTests
             .BeFalse();
     }
 
-    [Fact(DisplayName = "Equals method, only left entity has null Id - Should return false")]
-    public void EqualsMethod_LeftIdNULL_False()
+    [Fact]
+    public void LeftIdNULL_EqualsMethod_False()
     {
         // Arrange
         var left = new FakeEntity
@@ -161,8 +160,8 @@ public class EntityBaseTests
             .BeFalse();
     }
 
-    [Fact(DisplayName = "Equality operator, only right entity has null Id - Should return false")]
-    public void EqualityOperator_RightIdNULL_False()
+    [Fact]
+    public void RightIdNULL_EqualityOperator_False()
     {
         // Arrange
         var left = new FakeEntity(Guid.NewGuid())
@@ -185,8 +184,8 @@ public class EntityBaseTests
             .BeFalse();
     }
 
-    [Fact(DisplayName = "Equals method, only right entity has null Id - Should return false")]
-    public void EqualsMethod_RightIdNULL_False()
+    [Fact]
+    public void RightIdNULL_EqualsMethod_False()
     {
         // Arrange
         var left = new FakeEntity(Guid.NewGuid())
@@ -209,8 +208,8 @@ public class EntityBaseTests
             .BeFalse();
     }
 
-    [Fact(DisplayName = "Equality operator, different Ids - Should return false")]
-    public void EqualityOperator_DifferentIds_False()
+    [Fact]
+    public void DifferentIds_EqualityOperator_False()
     {
         // Arrange
         var left = new FakeEntity(Guid.NewGuid())
@@ -232,8 +231,8 @@ public class EntityBaseTests
             .BeFalse();
     }
 
-    [Fact(DisplayName = "Equals method, different Ids - Should return false")]
-    public void EqualsMethod_DifferentIds_False()
+    [Fact]
+    public void DifferentIds_EqualsMethod_False()
     {
         // Arrange
         var left = new FakeEntity(Guid.NewGuid())
@@ -256,7 +255,7 @@ public class EntityBaseTests
             .BeFalse();
     }
 
-    [Fact(DisplayName = "Equality operator, same Ids - Should return true")]
+    [Fact]
     public void EqualityOperator_SameIds_True()
     {
         // Arrange
@@ -282,8 +281,8 @@ public class EntityBaseTests
             .BeTrue();
     }
 
-    [Fact(DisplayName = "Equals method, same Ids - Should return true")]
-    public void EqualsMethod_SameIds_True()
+    [Fact]
+    public void SameIds_EqualsMethod_True()
     {
         // Arrange
         var id = Guid.NewGuid();
@@ -308,8 +307,8 @@ public class EntityBaseTests
             .BeTrue();
     }
 
-    [Fact(DisplayName = "Equals method, classes with type Ids different - Should return false")]
-    public void EqualsMethod_DifferenteClassesBothIDs12_False()
+    [Fact]
+    public void DifferenteClassesBothIDs12_EqualsMethod_False()
     {
         // Arrange
         FakeClient left = new() { Id = 12 };
@@ -325,8 +324,8 @@ public class EntityBaseTests
             .BeFalse();
     }
 
-    [Fact(DisplayName = "Equals method, different classes and the right object is null - Should return false")]
-    public void EqualsMethod_DifferenteClassesRightNull_False()
+    [Fact]
+    public void DifferenteClassesRightNull_EqualsMethod_False()
     {
         // Arrange
         FakeEntity left = new();
@@ -342,8 +341,8 @@ public class EntityBaseTests
             .BeFalse();
     }
 
-    [Fact(DisplayName = "Equals method, different classes and both both instanced - Should return false")]
-    public void EqualsMethod_DifferenteClassesBothIDsNull_False()
+    [Fact]
+    public void DifferenteClassesBothIDsNull_EqualsMethod_False()
     {
         // Arrange
         FakeClient left = new() { Id = null };
@@ -359,8 +358,8 @@ public class EntityBaseTests
             .BeFalse();
     }
 
-    [Fact(DisplayName = "Difference operator, different Ids - Should return true")]
-    public void DifferenceOperator_DifferentIds_True()
+    [Fact]
+    public void DifferentIds_DifferenceOperator_True()
     {
         // Arrange
         var left = new FakeEntity(Guid.NewGuid())
@@ -383,8 +382,8 @@ public class EntityBaseTests
             .BeTrue();
     }
 
-    [Fact(DisplayName = "Difference operator, same Ids - Should return false")]
-    public void DifferenceOperator_SameIds_False()
+    [Fact]
+    public void SameIds_DifferenceOperator_False()
     {
         // Arrange
         var id = Guid.NewGuid();
@@ -409,8 +408,8 @@ public class EntityBaseTests
             .BeFalse();
     }
 
-    [Fact(DisplayName = "Comparison of the hash codes, same types and Ids - Should return true")]
-    public void ComparisonHashCodes_SameTypeAndIds_True()
+    [Fact]
+    public void SameTypeAndIds_ComparisonHashCodes_True()
     {
         // Arrange
         var id = Guid.NewGuid();
@@ -428,8 +427,8 @@ public class EntityBaseTests
             .BeTrue();
     }
 
-    [Fact(DisplayName = "Comparison of the hash codes, different types and same Ids - Should return false")]
-    public void ComparisonHashCodes_DifferentTypeSameIds_False()
+    [Fact]
+    public void DifferentTypeSameIds_ComparisonHashCodes_False()
     {
         // Arrange
         var id = Guid.NewGuid();
@@ -447,8 +446,8 @@ public class EntityBaseTests
             .BeFalse();
     }
 
-    [Fact(DisplayName = "Comparison of the hash codes, same types and differentT Ids - Should return false")]
-    public void ComparisonHashCodes_SameTypeAndDifferentTIds_False()
+    [Fact]
+    public void SameTypeAndDifferentTIds_ComparisonHashCodes_False()
     {
         // Arrange
         var entity1 = new FakeEntity(Guid.NewGuid());
@@ -464,8 +463,8 @@ public class EntityBaseTests
             .BeFalse();
     }
 
-    [Fact(DisplayName = "Test an entity valid - Should not return anything")]
-    public void Validate_Valid_NoException()
+    [Fact]
+    public void ValidEntity_Validate_NoException()
     {
         // Arrange
         var fake = new FakeEntity(Guid.NewGuid(), "Fake name");
@@ -480,8 +479,8 @@ public class EntityBaseTests
             .BeNull();
     }
 
-    [Fact(DisplayName = "Test an entity wihtout validate setted - Should not return anything")]
-    public void Validate_EntityNotSetValidate_Void()
+    [Fact]
+    public void EntityNotSetValidate_Validate_NoException()
     {
         // Arrange
         var fake = new FakeClient();
@@ -496,8 +495,8 @@ public class EntityBaseTests
             .BeNull();
     }
 
-    [Fact(DisplayName = "Test an entity invalid - Should return an exception")]
-    public void Validate_Invalid_void()
+    [Fact]
+    public void InvalidEntity_Validate_NoException()
     {
         // Arrange
         var fake = new FakeEntity(Guid.NewGuid());
@@ -512,7 +511,7 @@ public class EntityBaseTests
             .NotBeNull();
     }
 
-    [Fact(DisplayName = "ToString of the entity - Should return a type and userId")]
+    [Fact]
     public void Entity_ToString_WithTypeAndUserId()
     {
         // Arrange
@@ -529,8 +528,8 @@ public class EntityBaseTests
             .Be($"[FakeEntity] Id: {userId}");
     }
 
-    [Fact(DisplayName = "Test hash code of two entities with same type and same id - Should return same HashCode for both entities")]
-    public void TestHashcode_SameTypeAndSameId_BothEquals()
+    [Fact]
+    public void SameTypeAndSameId_TestHashcode_BothEquals()
     {
         // Arrange
         var userId = Guid.NewGuid();
@@ -548,8 +547,8 @@ public class EntityBaseTests
             .Be(act2);
     }
 
-    [Fact(DisplayName = "Test hash code of two entities with same type and different id - Should return different HashCode")]
-    public void TestHashcode_SameTypeAndDifferentId_BothEquals()
+    [Fact]
+    public void SameTypeAndDifferentId_TestHashcode_BothEquals()
     {
         // Arrange
         var fake1 = new FakeEntity(Guid.NewGuid());
@@ -566,8 +565,8 @@ public class EntityBaseTests
             .NotBe(act2);
     }
 
-    [Fact(DisplayName = "Test hash code of two entities with different type and same id - Should return different HashCode")]
-    public void TestHashcode_DifferentTypeAndSameId_BothEquals()
+    [Fact]
+    public void DifferentTypeAndSameId_TestHashcode_BothEquals()
     {
         // Arrange
         uint id = 451;

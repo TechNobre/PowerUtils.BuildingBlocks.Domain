@@ -6,7 +6,7 @@ namespace PowerUtils.BuildingBlocks.Domain.Tests;
 public class SpecificationTests
 {
     [Fact]
-    public void IsSatisfiedBy_Quantity5NotDeleted_True()
+    public void Quantity5NotDeleted_IsSatisfiedBy_True()
     {
         // Arrange
         var product = new FakeProduct(4512, 5);
@@ -22,7 +22,7 @@ public class SpecificationTests
     }
 
     [Fact]
-    public void IsSatisfiedBy_Quantity0NotDeleted_True()
+    public void Quantity0NotDeleted_IsSatisfiedBy_True()
     {
         // Arrange
         var product = new FakeProduct(4512, 0);
@@ -38,7 +38,7 @@ public class SpecificationTests
     }
 
     [Fact]
-    public void IsNotSatisfiedBy_Quantity5Deleted_True()
+    public void Quantity5Deleted_IsNotSatisfiedBy_True()
     {
         // Arrange
         var product = new FakeProduct(4512, 5);
