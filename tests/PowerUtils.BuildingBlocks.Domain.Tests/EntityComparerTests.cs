@@ -4,12 +4,11 @@ using PowerUtils.BuildingBlocks.Domain.Tests.Fakes.Entities;
 
 namespace PowerUtils.BuildingBlocks.Domain.Tests;
 
-[Trait("Category", "Entities")]
 public class EntityComparerTests
 {
 
-    [Fact(DisplayName = "Add two different object in dictionary - Should add successfully")]
-    public void EqualityComparer_AddDifferentObjects_Added()
+    [Fact]
+    public void AddDifferentObjects_EqualityComparer_Added()
     {
         // Arrange
         var comparer = new EntityComparer<Guid?>();
@@ -20,16 +19,11 @@ public class EntityComparerTests
 
 
         // Act
-        Exception act = null;
-        try
+        var act = Record.Exception(() =>
         {
             list.Add(fake1, 1);
             list.Add(fake2, 2);
-        }
-        catch(Exception exception)
-        {
-            act = exception;
-        }
+        });
 
 
         // Assert
@@ -37,8 +31,8 @@ public class EntityComparerTests
             .BeNull();
     }
 
-    [Fact(DisplayName = "Add two different object withe the same Id in dictionary - Should return an exception")]
-    public void EqualityComparer_AddDifferentObjectsSameId_Exception()
+    [Fact]
+    public void AddDifferentObjectsSameId_EqualityComparer_Exception()
     {
         // Arrange
         var comparer = EntityComparer<Guid?>.Default;
@@ -51,16 +45,11 @@ public class EntityComparerTests
 
 
         // Act
-        Exception act = null;
-        try
+        var act = Record.Exception(() =>
         {
             list.Add(fake1, 1);
             list.Add(fake2, 2);
-        }
-        catch(Exception exception)
-        {
-            act = exception;
-        }
+        });
 
 
         // Assert
