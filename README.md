@@ -17,13 +17,11 @@
 - [How to use](#how-to-use)
 - [Interfaces](#Interfaces)
 - [EntityBase](#EntityBase)
-  - [EntityBase.Validate()](#EntityBase.Validate)
   - [EntityBase.Equals()](#EntityBase.Equals)
   - [EntityBase.operator ==](#EntityBase.EqualityOperator)
   - [EntityBase.operator !=](#EntityBase.InequalityOperator)
   - [EntityComparer](#IEntityBase.EntityComparer)
 - [ValueObjectBase](#ValueObjectBase)
-  - [ValueObjectBase.Validate()](#ValueObjectBase.Validate)
   - [ValueObjectBase.Equals()](#ValueObjectBase.Equals)
   - [ValueObjectBase.operator ==](#ValueObjectBase.EqualityOperator)
   - [ValueObjectBase.operator !=](#ValueObjectBase.InequalityOperator)
@@ -35,8 +33,9 @@
 
 
 ## Support to <a name="support-to"></a>
-- .NET 3.1 or more
-- .NET Standard 2.1
+- .NET 6.0
+- .NET 5.0
+- .NET 3.1
 
 
 
@@ -78,31 +77,6 @@ public class Client : EntityBase<Guid>
     public Client(string name)
         : base(Guid.NewGuid())
         => Name = name;
-
-    public override void Validate()
-    {
-        if(string.IsNullOrWhiteSpace(Name))
-        {
-            throw new ArgumentException("The name cannot be not null or empty");
-        }
-    }
-}
-```
-
-
-#### EntityBase.Validate() <a name="EntityBase.Validate"></a>
-Virtual method that can be override with validations
-
-```csharp
-var client = new Client("Nelson Nobre");
-
-try
-{
-    client.Validate();
-}
-catch(Exception exception)
-{
-    // ...
 }
 ```
 
@@ -152,13 +126,13 @@ list.Add(client2, 1);
 
 
 ### ValueObjectBase <a name="ValueObjectBase"></a>
-- .NET 5 or more has avalidable the `ValueObjectRBase` based on **record**. `public abstract record ValueObjectRBase`
-- `ValueObjectCBase` is based on `class`
+- .NET 5 or more has avalidable the `ValueObjectBase` based on `record`;
+- For older .NET versions is available `ValueObjectBase` based on `class`;
 
 ValueOjects are compared by all properties
 
 ```csharp
-public record Address : ValueObjectRBase
+public record Address : ValueObjectBase
 {
     public string Country { get; init; }
     public string Region { get; init; }
@@ -168,36 +142,6 @@ public record Address : ValueObjectRBase
         Country = country;
         Region = region;
     }
-
-    public override void Validate()
-    {
-        if(string.IsNullOrWhiteSpace(Country))
-        {
-            throw new ArgumentException("The country cannot be not null or empty");
-        }
-
-        if(string.IsNullOrWhiteSpace(Region))
-        {
-            throw new ArgumentException("The name region be not null or empty");
-        }
-    }
-}
-```
-
-
-#### ValueObjectBase.Validate() <a name="ValueObjectBase.Validate"></a>
-Virtual method that can be override with validations
-
-```csharp
-var address = new Address("Lisbon", "Portugal");
-
-try
-{
-    address.Validate();
-}
-catch(Exception exception)
-{
-    // ...
 }
 ```
 
