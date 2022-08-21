@@ -1,14 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFrameworks>net6.0;net5.0;netstandard2.1;netcoreapp3.1</TargetFrameworks>
 
     <RootNamespace>PowerUtils.BuildingBlocks.Domain.Tests</RootNamespace>
     <AssemblyName>PowerUtils.BuildingBlocks.Domain.Tests</AssemblyName>
-
-    <!-- BIN OUTPUT -->
-    <OutputPath>bin</OutputPath>
-    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>
@@ -40,12 +36,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\PowerUtils.BuildingBlocks.Domain.csproj" />
-  </ItemGroup>
-
-
-  <ItemGroup>
-    <Using Include="Xunit" />
-    <Using Include="FluentAssertions" />
   </ItemGroup>
 
 

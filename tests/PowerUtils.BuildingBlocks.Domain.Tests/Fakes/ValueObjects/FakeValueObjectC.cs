@@ -1,34 +1,37 @@
-﻿using System.Collections.Generic;
+﻿#if !NET5_0_OR_GREATER
+using System.Collections.Generic;
 
-namespace PowerUtils.BuildingBlocks.Domain.Tests.Fakes.ValueObjects;
-
-public class FakeValueObjectC : ValueObjectCBase
+namespace PowerUtils.BuildingBlocks.Domain.Tests.Fakes.ValueObjects
 {
-    public int Number { get; init; }
-    public string Text { get; init; }
-    public FakeNestedValueObjectR Nested { get; init; }
-
-    public FakeValueObjectC() =>
-        Nested = new FakeNestedValueObjectR();
-
-    public FakeValueObjectC(int number, string text)
-        : this()
+    public class FakeValueObjectC : ValueObjectBase
     {
-        Number = number;
-        Text = text;
-    }
+        public int Number { get; private set; }
+        public string Text { get; private set; }
+        public FakeNestedValueObjectC Nested { get; private set; }
 
-    public FakeValueObjectC(int number, string text, int value1, int value2)
-    {
-        Number = number;
-        Text = text;
-        Nested = new FakeNestedValueObjectR(value1, value2);
-    }
+        public FakeValueObjectC() =>
+            Nested = new FakeNestedValueObjectC();
 
-    protected override IEnumerable<object> GetEqualityComponents()
-    {
-        yield return Number;
-        yield return Text;
-        yield return Nested;
+        public FakeValueObjectC(int number, string text)
+            : this()
+        {
+            Number = number;
+            Text = text;
+        }
+
+        public FakeValueObjectC(int number, string text, int value1, int value2)
+        {
+            Number = number;
+            Text = text;
+            Nested = new FakeNestedValueObjectC(value1, value2);
+        }
+
+        protected override IEnumerable<object> GetEqualityComponents()
+        {
+            yield return Number;
+            yield return Text;
+            yield return Nested;
+        }
     }
 }
+#endif

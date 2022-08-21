@@ -1,418 +1,423 @@
-﻿using PowerUtils.BuildingBlocks.Domain.Tests.Fakes.ValueObjects;
+﻿#if !NET5_0_OR_GREATER
+using FluentAssertions;
+using PowerUtils.BuildingBlocks.Domain.Tests.Fakes.ValueObjects;
+using Xunit;
 
-namespace PowerUtils.BuildingBlocks.Domain.Tests;
-
-public class ValueObjectCBaseTests
+namespace PowerUtils.BuildingBlocks.Domain.Tests
 {
-    [Fact]
-    public void BothNULL_EqualityOperator_True()
+    public class ValueObjectCBaseTests
     {
-        // Arrange
-        FakeValueObjectC left = null;
-        FakeValueObjectC right = null;
+        [Fact]
+        public void BothNULL_EqualityOperator_True()
+        {
+            // Arrange
+            FakeValueObjectC left = null;
+            FakeValueObjectC right = null;
 
 
-        // Act
-        var act = left == right;
+            // Act
+            var act = left == right;
 
 
-        // Assert
-        act.Should()
-            .BeTrue();
-    }
+            // Assert
+            act.Should()
+                .BeTrue();
+        }
 
-    [Fact]
-    public void LeftNULL_EqualityOperator_False()
-    {
-        // Arrange
-        FakeValueObjectC left = null;
-        var right = new FakeValueObjectC(12, "Fake");
+        [Fact]
+        public void LeftNULL_EqualityOperator_False()
+        {
+            // Arrange
+            FakeValueObjectC left = null;
+            var right = new FakeValueObjectC(12, "Fake");
 
 
-        // Act
-        var act = left == right;
+            // Act
+            var act = left == right;
 
 
-        // Assert
-        act.Should()
-            .BeFalse();
-    }
+            // Assert
+            act.Should()
+                .BeFalse();
+        }
 
-    [Fact]
-    public void RightNULL_EqualityOperator_False()
-    {
-        // Arrange
-        var left = new FakeValueObjectC(12, "Fake");
-        FakeValueObjectC right = null;
+        [Fact]
+        public void RightNULL_EqualityOperator_False()
+        {
+            // Arrange
+            var left = new FakeValueObjectC(12, "Fake");
+            FakeValueObjectC right = null;
 
 
-        // Act
-        var act = left == right;
+            // Act
+            var act = left == right;
 
 
-        // Assert
-        act.Should()
-            .BeFalse();
-    }
+            // Assert
+            act.Should()
+                .BeFalse();
+        }
 
-    [Fact]
-    public void AllFieldsNull_EqualityOperator_True()
-    {
-        // Arrange
-        var left = new FakeValueObjectC();
-        var right = new FakeValueObjectC();
+        [Fact]
+        public void AllFieldsNull_EqualityOperator_True()
+        {
+            // Arrange
+            var left = new FakeValueObjectC();
+            var right = new FakeValueObjectC();
 
 
-        // Act
-        var act = left == right;
+            // Act
+            var act = left == right;
 
 
-        // Assert
-        act.Should()
-            .BeTrue();
-    }
+            // Assert
+            act.Should()
+                .BeTrue();
+        }
 
-    [Fact]
-    public void AllFieldsNull_EqualsMethod_True()
-    {
-        // Arrange
-        var left = new FakeValueObjectC();
-        var right = new FakeValueObjectC();
+        [Fact]
+        public void AllFieldsNull_EqualsMethod_True()
+        {
+            // Arrange
+            var left = new FakeValueObjectC();
+            var right = new FakeValueObjectC();
 
 
-        // Act
-        var act = left.Equals(right);
+            // Act
+            var act = left.Equals(right);
 
 
-        // Assert
-        act.Should()
-            .BeTrue();
-    }
+            // Assert
+            act.Should()
+                .BeTrue();
+        }
 
-    [Fact]
-    public void LeftFieldsNull_EqualityOperator_False()
-    {
-        // Arrange
-        var left = new FakeValueObjectC();
-        var right = new FakeValueObjectC(12, "Fake");
+        [Fact]
+        public void LeftFieldsNull_EqualityOperator_False()
+        {
+            // Arrange
+            var left = new FakeValueObjectC();
+            var right = new FakeValueObjectC(12, "Fake");
 
 
-        // Act
-        var act = left == right;
+            // Act
+            var act = left == right;
 
 
-        // Assert
-        act.Should()
-            .BeFalse();
-    }
+            // Assert
+            act.Should()
+                .BeFalse();
+        }
 
-    [Fact]
-    public void RightFieldsNull_EqualityOperator_False()
-    {
-        // Arrange
-        var left = new FakeValueObjectC(12, "Fake");
-        var right = new FakeValueObjectC();
+        [Fact]
+        public void RightFieldsNull_EqualityOperator_False()
+        {
+            // Arrange
+            var left = new FakeValueObjectC(12, "Fake");
+            var right = new FakeValueObjectC();
 
 
-        // Act
-        var act = left == right;
+            // Act
+            var act = left == right;
 
 
-        // Assert
-        act.Should()
-            .BeFalse();
-    }
+            // Assert
+            act.Should()
+                .BeFalse();
+        }
 
-    [Fact]
-    public void LeftFieldsNull_EqualsMethod_False()
-    {
-        // Arrange
-        var left = new FakeValueObjectC();
-        var right = new FakeValueObjectC(12, "Fake");
+        [Fact]
+        public void LeftFieldsNull_EqualsMethod_False()
+        {
+            // Arrange
+            var left = new FakeValueObjectC();
+            var right = new FakeValueObjectC(12, "Fake");
 
 
-        // Act
-        var act = left.Equals(right);
+            // Act
+            var act = left.Equals(right);
 
 
-        // Assert
-        act.Should()
-            .BeFalse();
-    }
+            // Assert
+            act.Should()
+                .BeFalse();
+        }
 
-    [Fact]
-    public void RightValueWithNullId_EqualsMethod_False()
-    {
-        // Arrange
-        var left = new FakeValueObjectC(12, "Fake");
-        var right = new FakeValueObjectC();
+        [Fact]
+        public void RightValueWithNullId_EqualsMethod_False()
+        {
+            // Arrange
+            var left = new FakeValueObjectC(12, "Fake");
+            var right = new FakeValueObjectC();
 
 
-        // Act
-        var act = left.Equals(right);
+            // Act
+            var act = left.Equals(right);
 
 
-        // Assert
-        act.Should()
-            .BeFalse();
-    }
+            // Assert
+            act.Should()
+                .BeFalse();
+        }
 
-    [Fact]
-    public void AllFieldsDifferents_EqualityOperator_False()
-    {
-        // Arrange
-        var left = new FakeValueObjectC(13, "Fake left");
-        var right = new FakeValueObjectC(12, "Fake right");
+        [Fact]
+        public void AllFieldsDifferents_EqualityOperator_False()
+        {
+            // Arrange
+            var left = new FakeValueObjectC(13, "Fake left");
+            var right = new FakeValueObjectC(12, "Fake right");
 
 
-        // Act
-        var act = left == right;
+            // Act
+            var act = left == right;
 
 
-        // Assert
-        act.Should()
-            .BeFalse();
-    }
+            // Assert
+            act.Should()
+                .BeFalse();
+        }
 
-    [Fact]
-    public void AllFieldsDifferents_EqualsMethod_False()
-    {
-        // Arrange
-        var left = new FakeValueObjectC(13, "Fake left");
-        var right = new FakeValueObjectC(12, "Fake right");
+        [Fact]
+        public void AllFieldsDifferents_EqualsMethod_False()
+        {
+            // Arrange
+            var left = new FakeValueObjectC(13, "Fake left");
+            var right = new FakeValueObjectC(12, "Fake right");
 
 
-        // Act
-        var act = left.Equals(right);
+            // Act
+            var act = left.Equals(right);
 
 
-        // Assert
-        act.Should()
-            .BeFalse();
-    }
+            // Assert
+            act.Should()
+                .BeFalse();
+        }
 
-    [Fact]
-    public void AllFieldAreSame_EqualityOperator_True()
-    {
-        // Arrange
-        var left = new FakeValueObjectC(13, "Fake");
-        var right = new FakeValueObjectC(13, "Fake");
+        [Fact]
+        public void AllFieldAreSame_EqualityOperator_True()
+        {
+            // Arrange
+            var left = new FakeValueObjectC(13, "Fake");
+            var right = new FakeValueObjectC(13, "Fake");
 
 
-        // Act
-        var act = left == right;
+            // Act
+            var act = left == right;
 
 
-        // Assert
-        act.Should()
-            .BeTrue();
-    }
+            // Assert
+            act.Should()
+                .BeTrue();
+        }
 
-    [Fact]
-    public void AllFieldAreSame_EqualsMethod_True()
-    {
-        // Arrange
-        var left = new FakeValueObjectC(13, "Fake");
-        var right = new FakeValueObjectC(13, "Fake");
+        [Fact]
+        public void AllFieldAreSame_EqualsMethod_True()
+        {
+            // Arrange
+            var left = new FakeValueObjectC(13, "Fake");
+            var right = new FakeValueObjectC(13, "Fake");
 
 
-        // Act
-        var act = left.Equals(right);
+            // Act
+            var act = left.Equals(right);
 
 
-        // Assert
-        act.Should()
-            .BeTrue();
-    }
+            // Assert
+            act.Should()
+                .BeTrue();
+        }
 
-    [Fact]
-    public void AllFieldAreDifferents_DifferenceOperator_True()
-    {
-        // Arrange
-        var left = new FakeValueObjectC(13, "Fake left");
-        var right = new FakeValueObjectC(12, "Fake right");
+        [Fact]
+        public void AllFieldAreDifferents_DifferenceOperator_True()
+        {
+            // Arrange
+            var left = new FakeValueObjectC(13, "Fake left");
+            var right = new FakeValueObjectC(12, "Fake right");
 
 
-        // Act
-        var act = left != right;
+            // Act
+            var act = left != right;
 
 
-        // Assert
-        act.Should()
-            .BeTrue();
-    }
+            // Assert
+            act.Should()
+                .BeTrue();
+        }
 
-    [Fact]
-    public void AllFieldAreSame_DifferenceOperator_False()
-    {
-        // Arrange
-        var left = new FakeValueObjectC(13, "Fake");
-        var right = new FakeValueObjectC(13, "Fake");
+        [Fact]
+        public void AllFieldAreSame_DifferenceOperator_False()
+        {
+            // Arrange
+            var left = new FakeValueObjectC(13, "Fake");
+            var right = new FakeValueObjectC(13, "Fake");
 
 
-        // Act
-        var act = left != right;
+            // Act
+            var act = left != right;
 
 
-        // Assert
-        act.Should()
-            .BeFalse();
-    }
+            // Assert
+            act.Should()
+                .BeFalse();
+        }
 
-    [Fact]
-    public void DifferentNestedValueObject_EqualityOperator_False()
-    {
-        // Arrange
-        var left = new FakeValueObjectC(13, "Fake", 12, 13);
-        var right = new FakeValueObjectC(13, "Fake", 12, 14);
+        [Fact]
+        public void DifferentNestedValueObject_EqualityOperator_False()
+        {
+            // Arrange
+            var left = new FakeValueObjectC(13, "Fake", 12, 13);
+            var right = new FakeValueObjectC(13, "Fake", 12, 14);
 
 
-        // Act
-        var act = left == right;
+            // Act
+            var act = left == right;
 
 
-        // Assert
-        act.Should()
-            .BeFalse();
-    }
+            // Assert
+            act.Should()
+                .BeFalse();
+        }
 
-    [Fact]
-    public void EqualsNestedValueObject_EqualityOperator_True()
-    {
-        // Arrange
-        var left = new FakeValueObjectC(13, "Fake", 12, 13);
-        var right = new FakeValueObjectC(13, "Fake", 12, 13);
+        [Fact]
+        public void EqualsNestedValueObject_EqualityOperator_True()
+        {
+            // Arrange
+            var left = new FakeValueObjectC(13, "Fake", 12, 13);
+            var right = new FakeValueObjectC(13, "Fake", 12, 13);
 
 
-        // Act
-        var act = left == right;
+            // Act
+            var act = left == right;
 
 
-        // Assert
-        act.Should()
-            .BeTrue();
-    }
+            // Assert
+            act.Should()
+                .BeTrue();
+        }
 
-    [Fact]
-    public void SameTypeAndSameValues_TestHashcode_BothEquals()
-    {
-        // Arrange
-        var fake1 = new FakeValueObjectC(1, "fake");
-        var fake2 = new FakeValueObjectC(1, "fake");
+        [Fact]
+        public void SameTypeAndSameValues_TestHashcode_BothEquals()
+        {
+            // Arrange
+            var fake1 = new FakeValueObjectC(1, "fake");
+            var fake2 = new FakeValueObjectC(1, "fake");
 
 
-        // Act
-        var act1 = fake1.GetHashCode();
-        var act2 = fake2.GetHashCode();
+            // Act
+            var act1 = fake1.GetHashCode();
+            var act2 = fake2.GetHashCode();
 
 
-        // Assert
-        act1.Should()
-            .Be(act2);
-    }
+            // Assert
+            act1.Should()
+                .Be(act2);
+        }
 
-    [Fact]
-    public void SameTypeAndDifferentValues_TestHashcode_BothEquals()
-    {
-        // Arrange
-        var fake1 = new FakeValueObjectC(1, "fake");
-        var fake2 = new FakeValueObjectC(2, "fake");
+        [Fact]
+        public void SameTypeAndDifferentValues_TestHashcode_BothEquals()
+        {
+            // Arrange
+            var fake1 = new FakeValueObjectC(1, "fake");
+            var fake2 = new FakeValueObjectC(2, "fake");
 
 
-        // Act
-        var act1 = fake1.GetHashCode();
-        var act2 = fake2.GetHashCode();
+            // Act
+            var act1 = fake1.GetHashCode();
+            var act2 = fake2.GetHashCode();
 
 
-        // Assert
-        act1.Should()
-            .NotBe(act2);
-    }
+            // Assert
+            act1.Should()
+                .NotBe(act2);
+        }
 
-    [Fact]
-    public void DifferentType_TestHashcode_BothEquals()
-    {
-        // Arrange
-        var fake1 = new FakeValueObjectC(1, "fake");
-        var fake2 = new FakeNestedValueObjectC(1, 2);
+        [Fact]
+        public void DifferentType_TestHashcode_BothEquals()
+        {
+            // Arrange
+            var fake1 = new FakeValueObjectC(1, "fake");
+            var fake2 = new FakeNestedValueObjectC(1, 2);
 
 
-        // Act
-        var act1 = fake1.GetHashCode();
-        var act2 = fake2.GetHashCode();
+            // Act
+            var act1 = fake1.GetHashCode();
+            var act2 = fake2.GetHashCode();
 
 
-        // Assert
-        act1.Should()
-            .NotBe(act2);
-    }
+            // Assert
+            act1.Should()
+                .NotBe(act2);
+        }
 
-    [Fact]
-    public void DifferenteValueObject_EqualsMethod_False()
-    {
-        // Arrange
-        var left = new FakeValueObjectC(1, "fake");
-        var right = new FakeNestedValueObjectC(1, 2);
+        [Fact]
+        public void DifferenteValueObject_EqualsMethod_False()
+        {
+            // Arrange
+            var left = new FakeValueObjectC(1, "fake");
+            var right = new FakeNestedValueObjectC(1, 2);
 
 
-        // Act
-        var act = left.Equals(right);
+            // Act
+            var act = left.Equals(right);
 
 
-        // Assert
-        act.Should()
-            .BeFalse();
-    }
+            // Assert
+            act.Should()
+                .BeFalse();
+        }
 
 
-    [Fact]
-    public void RightNull_EqualsMethod_False()
-    {
-        // Arrange
-        var left = new FakeValueObjectC(1, "fake");
-        FakeValueObjectC right = null;
+        [Fact]
+        public void RightNull_EqualsMethod_False()
+        {
+            // Arrange
+            var left = new FakeValueObjectC(1, "fake");
+            FakeValueObjectC right = null;
 
 
-        // Act
-        var act = left.Equals(right);
+            // Act
+            var act = left.Equals(right);
 
 
-        // Assert
-        act.Should()
-            .BeFalse();
-    }
+            // Assert
+            act.Should()
+                .BeFalse();
+        }
 
-    [Fact]
-    public void DifferenteClassesBothIDsNull_EqualsMethod_True()
-    {
-        // Arrange
-        var left = new FakeValueObjectC(1, "fake");
-        var right = new FakeValueObjectC(1, "fake");
+        [Fact]
+        public void DifferenteClassesBothIDsNull_EqualsMethod_True()
+        {
+            // Arrange
+            var left = new FakeValueObjectC(1, "fake");
+            var right = new FakeValueObjectC(1, "fake");
 
 
-        // Act
-        var act = left.Equals(right);
+            // Act
+            var act = left.Equals(right);
 
 
-        // Assert
-        act.Should()
-            .BeTrue();
-    }
+            // Assert
+            act.Should()
+                .BeTrue();
+        }
 
-    [Fact]
-    public void CompareWithNonValueObject_EqualsMethod_False()
-    {
-        // Arrange
-        var left = new FakeValueObjectC(1, "fake");
-        var right = new object();
+        [Fact]
+        public void CompareWithNonValueObject_EqualsMethod_False()
+        {
+            // Arrange
+            var left = new FakeValueObjectC(1, "fake");
+            var right = new object();
 
 
-        // Act
-        var act = left.Equals(right);
+            // Act
+            var act = left.Equals(right);
 
 
-        // Assert
-        act.Should()
-            .BeFalse();
+            // Assert
+            act.Should()
+                .BeFalse();
+        }
     }
 }
+#endif

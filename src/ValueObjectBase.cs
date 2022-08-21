@@ -1,19 +1,28 @@
-﻿using System;
+﻿#if NET5_0_OR_GREATER
+
+namespace PowerUtils.BuildingBlocks.Domain
+{
+    public abstract record ValueObjectBase : IValueObjectBase { }
+}
+
+#else
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace PowerUtils.BuildingBlocks.Domain
 {
     // https://enterprisecraftsmanship.com/posts/value-object-better-implementation/
-    public abstract class ValueObjectCBase : IValueObjectBase,
-        IEquatable<ValueObjectCBase>
+    public abstract class ValueObjectBase : IValueObjectBase,
+        IEquatable<ValueObjectBase>
     {
         /// <summary>
         /// Gets value that defines the object instance
         /// </summary>
         protected abstract IEnumerable<object> GetEqualityComponents();
 
-        public virtual bool Equals(ValueObjectCBase other)
+        public virtual bool Equals(ValueObjectBase other)
         {
             if(other == null)
             {
@@ -29,7 +38,7 @@ namespace PowerUtils.BuildingBlocks.Domain
         }
 
         public override bool Equals(object obj)
-            => Equals(obj as ValueObjectCBase);
+            => Equals(obj as ValueObjectBase);
 
         public override int GetHashCode()
             => GetEqualityComponents()
@@ -39,7 +48,7 @@ namespace PowerUtils.BuildingBlocks.Domain
         /// <summary>
         /// Equality operator
         /// </summary>
-        public static bool operator ==(ValueObjectCBase left, ValueObjectCBase right)
+        public static bool operator ==(ValueObjectBase left, ValueObjectBase right)
         {
             if(left is null && right is null)
             {
@@ -57,7 +66,9 @@ namespace PowerUtils.BuildingBlocks.Domain
         /// <summary>
         /// Inequality operator
         /// </summary>
-        public static bool operator !=(ValueObjectCBase left, ValueObjectCBase right)
+        public static bool operator !=(ValueObjectBase left, ValueObjectBase right)
             => !(left == right);
     }
 }
+
+#endif

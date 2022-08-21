@@ -1,56 +1,59 @@
-﻿using PowerUtils.BuildingBlocks.Domain.Tests.Fakes.Entities;
+﻿using FluentAssertions;
+using PowerUtils.BuildingBlocks.Domain.Tests.Fakes.Entities;
 using PowerUtils.BuildingBlocks.Domain.Tests.Fakes.Specifications;
+using Xunit;
 
-namespace PowerUtils.BuildingBlocks.Domain.Tests;
-
-public class SpecificationTests
+namespace PowerUtils.BuildingBlocks.Domain.Tests
 {
-    [Fact]
-    public void Quantity5NotDeleted_IsSatisfiedBy_True()
+    public class SpecificationTests
     {
-        // Arrange
-        var product = new FakeProduct(4512, 5);
+        [Fact]
+        public void Quantity5NotDeleted_IsSatisfiedBy_True()
+        {
+            // Arrange
+            var product = new FakeProduct(4512, 5);
 
 
-        // Act
-        var act = new FakeAvailableProductSpec().IsSatisfiedBy(product);
+            // Act
+            var act = new FakeAvailableProductSpec().IsSatisfiedBy(product);
 
 
-        // Assert
-        act.Should()
-            .BeTrue();
-    }
+            // Assert
+            act.Should()
+                .BeTrue();
+        }
 
-    [Fact]
-    public void Quantity0NotDeleted_IsSatisfiedBy_True()
-    {
-        // Arrange
-        var product = new FakeProduct(4512, 0);
-
-
-        // Act
-        var act = new FakeAvailableProductSpec().IsSatisfiedBy(product);
+        [Fact]
+        public void Quantity0NotDeleted_IsSatisfiedBy_True()
+        {
+            // Arrange
+            var product = new FakeProduct(4512, 0);
 
 
-        // Assert
-        act.Should()
-            .BeFalse();
-    }
-
-    [Fact]
-    public void Quantity5Deleted_IsNotSatisfiedBy_True()
-    {
-        // Arrange
-        var product = new FakeProduct(4512, 5);
-        product.Delete();
+            // Act
+            var act = new FakeAvailableProductSpec().IsSatisfiedBy(product);
 
 
-        // Act
-        var act = new FakeAvailableProductSpec().IsNotSatisfiedBy(product);
+            // Assert
+            act.Should()
+                .BeFalse();
+        }
+
+        [Fact]
+        public void Quantity5Deleted_IsNotSatisfiedBy_True()
+        {
+            // Arrange
+            var product = new FakeProduct(4512, 5);
+            product.Delete();
 
 
-        // Assert
-        act.Should()
-            .BeTrue();
+            // Act
+            var act = new FakeAvailableProductSpec().IsNotSatisfiedBy(product);
+
+
+            // Assert
+            act.Should()
+                .BeTrue();
+        }
     }
 }
