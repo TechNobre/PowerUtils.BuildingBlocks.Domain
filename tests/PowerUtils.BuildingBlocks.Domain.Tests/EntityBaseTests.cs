@@ -464,54 +464,6 @@ public class EntityBaseTests
     }
 
     [Fact]
-    public void ValidEntity_Validate_NoException()
-    {
-        // Arrange
-        var fake = new FakeEntity(Guid.NewGuid(), "Fake name");
-
-
-        // Act
-        var act = Record.Exception(() => fake.Validate());
-
-
-        // Assert
-        act.Should()
-            .BeNull();
-    }
-
-    [Fact]
-    public void EntityNotSetValidate_Validate_NoException()
-    {
-        // Arrange
-        var fake = new FakeClient();
-
-
-        // Act
-        var act = Record.Exception(() => fake.Validate());
-
-
-        // Assert
-        act.Should()
-            .BeNull();
-    }
-
-    [Fact]
-    public void InvalidEntity_Validate_NoException()
-    {
-        // Arrange
-        var fake = new FakeEntity(Guid.NewGuid());
-
-
-        // Act
-        var act = Record.Exception(() => fake.Validate());
-
-
-        // Assert
-        act.Should()
-            .NotBeNull();
-    }
-
-    [Fact]
     public void Entity_ToString_WithTypeAndUserId()
     {
         // Arrange

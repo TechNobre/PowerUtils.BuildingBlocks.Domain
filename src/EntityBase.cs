@@ -12,8 +12,6 @@
         protected EntityBase(TId id)
             : this() => Id = id;
 
-        public virtual void Validate() { }
-
 
         public virtual bool Equals(IEntityBase<TId> other)
         {

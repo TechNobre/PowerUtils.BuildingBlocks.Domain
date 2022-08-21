@@ -10,6 +10,5 @@ namespace PowerUtils.BuildingBlocks.Domain
 #else
         TId Id { get; }
 #endif
-        void Validate();
     }
 }

@@ -17,12 +17,4 @@ public class FakeEntity : EntityBase<Guid?>
     public FakeEntity(Guid id, string name)
         : base(id)
         => Name = name;
-
-    public override void Validate()
-    {
-        if(string.IsNullOrWhiteSpace(Name))
-        {
-            throw new ArgumentException("The name cannot be not null or empty");
-        }
-    }
 }
