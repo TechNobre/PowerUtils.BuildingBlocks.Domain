@@ -294,54 +294,6 @@ public class ValueObjectCBaseTests
     }
 
     [Fact]
-    public void ValidEntity_Validate_NoException()
-    {
-        // Arrange
-        var fake = new FakeValueObjectCWithValidate("Fake");
-
-
-        // Act
-        var act = Record.Exception(() => fake.Validate());
-
-
-        // Assert
-        act.Should()
-            .BeNull();
-    }
-
-    [Fact]
-    public void EntityNotSetValidate_Validate_NoException()
-    {
-        // Arrange
-        var fake = new FakeValueObjectC(13, "Fake");
-
-
-        // Act
-        var act = Record.Exception(() => fake.Validate());
-
-
-        // Assert
-        act.Should()
-            .BeNull();
-    }
-
-    [Fact]
-    public void InvalidEntity_Validate_NoException()
-    {
-        // Arrange
-        var fake = new FakeValueObjectCWithValidate(null);
-
-
-        // Act
-        var act = Record.Exception(() => fake.Validate());
-
-
-        // Assert
-        act.Should()
-            .NotBeNull();
-    }
-
-    [Fact]
     public void SameTypeAndSameValues_TestHashcode_BothEquals()
     {
         // Arrange
@@ -382,7 +334,7 @@ public class ValueObjectCBaseTests
     {
         // Arrange
         var fake1 = new FakeValueObjectC(1, "fake");
-        var fake2 = new FakeValueObjectCWithValidate("fake");
+        var fake2 = new FakeNestedValueObjectC(1, 2);
 
 
         // Act
@@ -400,7 +352,7 @@ public class ValueObjectCBaseTests
     {
         // Arrange
         var left = new FakeValueObjectC(1, "fake");
-        var right = new FakeValueObjectCWithValidate("fake");
+        var right = new FakeNestedValueObjectC(1, 2);
 
 
         // Act

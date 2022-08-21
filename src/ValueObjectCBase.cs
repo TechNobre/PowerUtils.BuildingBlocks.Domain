@@ -13,8 +13,6 @@ namespace PowerUtils.BuildingBlocks.Domain
         /// </summary>
         protected abstract IEnumerable<object> GetEqualityComponents();
 
-        public virtual void Validate() { }
-
         public virtual bool Equals(ValueObjectCBase other)
         {
             if(other == null)
