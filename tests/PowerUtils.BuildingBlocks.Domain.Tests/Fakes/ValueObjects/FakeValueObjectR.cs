@@ -1,25 +1,28 @@
-﻿namespace PowerUtils.BuildingBlocks.Domain.Tests.Fakes.ValueObjects;
-
-public record FakeValueObjectR : ValueObjectRBase
+﻿#if NET5_0_OR_GREATER
+namespace PowerUtils.BuildingBlocks.Domain.Tests.Fakes.ValueObjects
 {
-    public int Number { get; init; }
-    public string Text { get; init; }
-    public FakeNestedValueObjectR Nested { get; init; }
-
-    public FakeValueObjectR() =>
-        Nested = new FakeNestedValueObjectR();
-
-    public FakeValueObjectR(int number, string text)
-        : this()
+    public record FakeValueObjectR : ValueObjectBase
     {
-        Number = number;
-        Text = text;
-    }
+        public int Number { get; init; }
+        public string Text { get; init; }
+        public FakeNestedValueObjectR Nested { get; init; }
 
-    public FakeValueObjectR(int number, string text, int value1, int value2)
-    {
-        Number = number;
-        Text = text;
-        Nested = new FakeNestedValueObjectR(value1, value2);
+        public FakeValueObjectR() =>
+            Nested = new FakeNestedValueObjectR();
+
+        public FakeValueObjectR(int number, string text)
+            : this()
+        {
+            Number = number;
+            Text = text;
+        }
+
+        public FakeValueObjectR(int number, string text, int value1, int value2)
+        {
+            Number = number;
+            Text = text;
+            Nested = new FakeNestedValueObjectR(value1, value2);
+        }
     }
 }
+#endif

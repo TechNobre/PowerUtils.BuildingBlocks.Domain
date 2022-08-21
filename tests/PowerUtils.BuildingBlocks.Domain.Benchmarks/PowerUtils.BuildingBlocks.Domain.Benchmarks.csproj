@@ -8,10 +8,6 @@
     <RootNamespace>PowerUtils.BuildingBlocks.Domain.Benchmarks</RootNamespace>
     <AssemblyName>PowerUtils.BuildingBlocks.Domain.Benchmarks</AssemblyName>
 
-    <!-- BIN OUTPUT -->
-    <OutputPath>bin</OutputPath>
-    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 

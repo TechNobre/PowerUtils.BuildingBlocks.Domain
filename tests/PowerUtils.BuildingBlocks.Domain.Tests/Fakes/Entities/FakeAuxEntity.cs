@@ -1,15 +1,16 @@
 ﻿using System;
 
-namespace PowerUtils.BuildingBlocks.Domain.Tests.Fakes.Entities;
-
-public class FakeAuxEntity : EntityBase<Guid>
+namespace PowerUtils.BuildingBlocks.Domain.Tests.Fakes.Entities
 {
-    public string Name { get; set; }
+    public class FakeAuxEntity : EntityBase<Guid>
+    {
+        public string Name { get; set; }
 
-    public FakeAuxEntity()
-        : base()
-    { }
+        public FakeAuxEntity()
+            : base()
+        { }
 
-    public FakeAuxEntity(Guid id) : base(id)
-    { }
+        public FakeAuxEntity(Guid id) : base(id)
+        { }
+    }
 }

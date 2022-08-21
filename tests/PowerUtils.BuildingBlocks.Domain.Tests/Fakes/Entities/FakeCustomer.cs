@@ -1,8 +1,11 @@
-﻿namespace PowerUtils.BuildingBlocks.Domain.Tests.Fakes.Entities;
-
-public class FakeCustomer : EntityBase<uint?>
+﻿namespace PowerUtils.BuildingBlocks.Domain.Tests.Fakes.Entities
 {
-    public FakeCustomer() { }
-    public FakeCustomer(uint id)
-        : base(id) { }
+    public class FakeCustomer : EntityBase<uint?>
+    {
+        public FakeCustomer() { }
+        public FakeCustomer(uint? id)
+           : base(id) { }
+        public FakeCustomer(uint id)
+            : base(id) { }
+    }
 }
