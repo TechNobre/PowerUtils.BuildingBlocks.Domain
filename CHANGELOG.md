@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/TechNobre/PowerUtils.BuildingBlocks.Domain/compare/v2.0.0...v2.1.0) (2023-06-17)
+
+
+### Features
+
+* Added support for `.NET7` ([fca002f](https://github.com/TechNobre/PowerUtils.BuildingBlocks.Domain/commit/fca002fa49e1df5902a0f36cc709118a193ef75d))
+
 # [2.0.0](https://github.com/TechNobre/PowerUtils.BuildingBlocks.Domain/compare/v1.2.0...v2.0.0) (2022-08-21)
 
 
