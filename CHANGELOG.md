@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/TechNobre/PowerUtils.BuildingBlocks.Domain/compare/v2.1.0...v2.1.1) (2023-07-14)
+
+
+### Bug Fixes
+
+* Deprecated `ValueObjectBase` for .NET5 or more ([c4ed0a5](https://github.com/TechNobre/PowerUtils.BuildingBlocks.Domain/commit/c4ed0a557d44a6ad34bc9f909dbb5b88cf06cc46))
+
 # [2.1.0](https://github.com/TechNobre/PowerUtils.BuildingBlocks.Domain/compare/v2.0.0...v2.1.0) (2023-06-17)
 
 
