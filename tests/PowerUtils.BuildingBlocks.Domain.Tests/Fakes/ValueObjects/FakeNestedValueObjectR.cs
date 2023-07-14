@@ -1,7 +1,7 @@
 ﻿#if NET5_0_OR_GREATER
 namespace PowerUtils.BuildingBlocks.Domain.Tests.Fakes.ValueObjects
 {
-    public record FakeNestedValueObjectR : ValueObjectBase
+    public record FakeNestedValueObjectR : IValueObjectBase
     {
         public int Value1 { get; init; }
         public int Value2 { get; init; }
