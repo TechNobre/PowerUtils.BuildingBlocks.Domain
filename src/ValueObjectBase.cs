@@ -51,7 +51,7 @@ namespace PowerUtils.BuildingBlocks.Domain
         public override int GetHashCode()
             => GetEqualityComponents()
                 .Aggregate(1, (current, obj)
-                     => HashCode.Combine(current, obj));
+                    => HashCode.Combine(current, obj));
 
         /// <summary>
         /// Equality operator
