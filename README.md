@@ -131,11 +131,13 @@ list.Add(client2, 1);
 
 
 ### ValueObjectBase <a name="ValueObjectBase"></a>
-- .NET 5 or more has avalidable the `ValueObjectBase` based on `record`;
 - For older .NET versions is available `ValueObjectBase` based on `class`;
 
-ValueOjects are compared by all properties
+:warning: **DEPRECATED**
 
+This abstraction for ".NET 5 or later" doesn't provide any additional benefit as it simply restricts the implementation of value objects to records. It's commonly recommended to use `structs`, `record structs`, and similar constructs for value object implementations. Therefore, utilizing the `IValueObjectBase` interface to indicate the implementation as a value object is more than sufficient and isn't restricted to specific implementation types. The implementation will be completely removed after 2024/01/14.
+
+ValueOjects are compared by all properties
 ```csharp
 public record Address : ValueObjectBase
 {

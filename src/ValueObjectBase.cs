@@ -1,7 +1,15 @@
 ﻿#if NET5_0_OR_GREATER
 
+using System;
+
 namespace PowerUtils.BuildingBlocks.Domain
 {
+    /// <summary>
+    /// This abstraction for ".NET 5 or later" doesn't provide any additional benefit as it simply restricts the implementation of value objects to records.
+    /// It's commonly recommended to use `structs`, `record structs`, and similar constructs for value object implementations.
+    /// Therefore, utilizing the `IValueObjectBase` interface to indicate the implementation as a value object is more than sufficient and isn't restricted to specific implementation types.
+    /// </summary>
+    [Obsolete("Use the `IValueObjectBase` interface to mark your implementation as `ValueObject`. The implementation will be completely removed after 2024/01/14.")]
     public abstract record ValueObjectBase : IValueObjectBase { }
 }
 
@@ -43,7 +51,7 @@ namespace PowerUtils.BuildingBlocks.Domain
         public override int GetHashCode()
             => GetEqualityComponents()
                 .Aggregate(1, (current, obj)
-                     => HashCode.Combine(current, obj));
+                    => HashCode.Combine(current, obj));
 
         /// <summary>
         /// Equality operator

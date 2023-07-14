@@ -520,7 +520,7 @@ namespace PowerUtils.BuildingBlocks.Domain.Tests
         }
 
         [Fact]
-        public void DifferentTypeAndSameId_TestHashcode_BothEquals()
+        public void DifferentTypeAndSameId_TestHashcode_BothNotBeEquals()
         {
             // Arrange
             uint id = 451;
