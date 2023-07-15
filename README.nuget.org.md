@@ -1,4 +1,4 @@
-***Helpers to create the domain layers***
+***Building Blocks to work with domain layers***
 
 ![Tests](https://github.com/TechNobre/PowerUtils.BuildingBlocks.Domain/actions/workflows/tests.yml/badge.svg)
 [![Mutation tests](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2FTechNobre%2FPowerUtils.BuildingBlocks.Domain%2Fmain)](https://dashboard.stryker-mutator.io/reports/github.com/TechNobre/PowerUtils.BuildingBlocks.Domain/main)

@@ -2,7 +2,7 @@
 
 ![Logo](https://raw.githubusercontent.com/TechNobre/PowerUtils.BuildingBlocks.Domain/main/assets/logo/logo_128x128.png)
 
-***Helpers to create the domain layers***
+***Building Blocks to work with domain layers***
 
 ![Tests](https://github.com/TechNobre/PowerUtils.BuildingBlocks.Domain/actions/workflows/tests.yml/badge.svg)
 [![Mutation tests](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2FTechNobre%2FPowerUtils.BuildingBlocks.Domain%2Fmain)](https://dashboard.stryker-mutator.io/reports/github.com/TechNobre/PowerUtils.BuildingBlocks.Domain/main)
@@ -17,22 +17,22 @@
 [![License: MIT](https://img.shields.io/github/license/TechNobre/PowerUtils.BuildingBlocks.Domain.svg)](https://github.com/TechNobre/PowerUtils.BuildingBlocks.Domain/blob/main/LICENSE)
 
 
-- [Support](#support-to)
-- [How to use](#how-to-use)
-- [Interfaces](#Interfaces)
-- [EntityBase](#EntityBase)
-  - [EntityBase.Equals()](#EntityBase.Equals)
-  - [EntityBase.operator ==](#EntityBase.EqualityOperator)
-  - [EntityBase.operator !=](#EntityBase.InequalityOperator)
-  - [EntityComparer](#IEntityBase.EntityComparer)
-- [ValueObjectBase](#ValueObjectBase)
-  - [ValueObjectBase.Equals()](#ValueObjectBase.Equals)
-  - [ValueObjectBase.operator ==](#ValueObjectBase.EqualityOperator)
-  - [ValueObjectBase.operator !=](#ValueObjectBase.InequalityOperator)
-- [Specification](#Specification)
-- [Contribution](#contribution)
-- [License](./LICENSE)
-- [Changelog](./CHANGELOG.md)
+- [PowerUtils.BuildingBlocks.Domain](#powerutilsbuildingblocksdomain)
+  - [Support to ](#support-to-)
+  - [How to use ](#how-to-use-)
+      - [Install NuGet package](#install-nuget-package)
+    - [Interfaces ](#interfaces-)
+    - [EntityBase ](#entitybase-)
+      - [EntityBase.Equals() ](#entitybaseequals-)
+      - [EntityBase.operator == ](#entitybaseoperator--)
+      - [EntityBase.operator != ](#entitybaseoperator---1)
+      - [EntityComparer ](#entitycomparer-)
+    - [ValueObjectBase ](#valueobjectbase-)
+      - [ValueObjectBase.Equals() ](#valueobjectbaseequals-)
+      - [ValueObjectBase.operator == ](#valueobjectbaseoperator--)
+      - [ValueObjectBase.operator != ](#valueobjectbaseoperator---1)
+    - [Specification ](#specification-)
+  - [Contribution](#contribution)
 
 
 
