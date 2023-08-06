@@ -2,11 +2,7 @@
 {
     public abstract class EntityBase<TId> : IEntityBase<TId>
     {
-#if NET5_0_OR_GREATER
-        public virtual TId Id { get; init; }
-#else
         public virtual TId Id { get; protected set; }
-#endif
 
         protected EntityBase() { }
         protected EntityBase(TId id)
