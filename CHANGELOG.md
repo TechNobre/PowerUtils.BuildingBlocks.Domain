@@ -1,3 +1,15 @@
+# [3.0.0](https://github.com/TechNobre/PowerUtils.BuildingBlocks.Domain/compare/v2.1.1...v3.0.0) (2023-08-06)
+
+
+### Bug Fixes
+
+* Entity changed ([08ab094](https://github.com/TechNobre/PowerUtils.BuildingBlocks.Domain/commit/08ab094e62b337ff58e1d4433936b25f2a4157dc))
+
+
+### BREAKING CHANGES
+
+* Entity Id protected level changed
+
 ## [2.1.1](https://github.com/TechNobre/PowerUtils.BuildingBlocks.Domain/compare/v2.1.0...v2.1.1) (2023-07-14)
 
 
