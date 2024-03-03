@@ -22,6 +22,7 @@ using System.Linq;
 namespace PowerUtils.BuildingBlocks.Domain
 {
     // https://enterprisecraftsmanship.com/posts/value-object-better-implementation/
+    [Obsolete("This package has been discontinued because it never evolved, and the code present in this package does not justify its continuation. It is preferable to implement this code directly in the project if necessary.")]
     public abstract class ValueObjectBase : IValueObjectBase,
         IEquatable<ValueObjectBase>
     {
