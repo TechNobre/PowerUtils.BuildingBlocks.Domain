@@ -8,35 +8,24 @@ This package has been discontinued because it never evolved, and the code presen
 
 ***Building Blocks to work with domain layers***
 
-![Tests](https://github.com/TechNobre/PowerUtils.BuildingBlocks.Domain/actions/workflows/tests.yml/badge.svg)
-[![Mutation tests](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2FTechNobre%2FPowerUtils.BuildingBlocks.Domain%2Fmain)](https://dashboard.stryker-mutator.io/reports/github.com/TechNobre/PowerUtils.BuildingBlocks.Domain/main)
-
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=TechNobre_PowerUtils.BuildingBlocks.Domain&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=TechNobre_PowerUtils.BuildingBlocks.Domain)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=TechNobre_PowerUtils.BuildingBlocks.Domain&metric=coverage)](https://sonarcloud.io/summary/new_code?id=TechNobre_PowerUtils.BuildingBlocks.Domain)
-[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=TechNobre_PowerUtils.BuildingBlocks.Domain&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=TechNobre_PowerUtils.BuildingBlocks.Domain)
-[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=TechNobre_PowerUtils.BuildingBlocks.Domain&metric=bugs)](https://sonarcloud.io/summary/new_code?id=TechNobre_PowerUtils.BuildingBlocks.Domain)
-
-[![NuGet](https://img.shields.io/nuget/v/PowerUtils.BuildingBlocks.Domain.svg)](https://www.nuget.org/packages/PowerUtils.BuildingBlocks.Domain)
-[![Nuget](https://img.shields.io/nuget/dt/PowerUtils.BuildingBlocks.Domain.svg)](https://www.nuget.org/packages/PowerUtils.BuildingBlocks.Domain)
 [![License: MIT](https://img.shields.io/github/license/TechNobre/PowerUtils.BuildingBlocks.Domain.svg)](https://github.com/TechNobre/PowerUtils.BuildingBlocks.Domain/blob/main/LICENSE)
 
 
-- [Support](#support-to)
-- [How to use](#how-to-use)
-- [Interfaces](#Interfaces)
-- [EntityBase](#EntityBase)
-  - [EntityBase.Equals()](#EntityBase.Equals)
-  - [EntityBase.operator ==](#EntityBase.EqualityOperator)
-  - [EntityBase.operator !=](#EntityBase.InequalityOperator)
-  - [EntityComparer](#IEntityBase.EntityComparer)
-- [ValueObjectBase](#ValueObjectBase)
-  - [ValueObjectBase.Equals()](#ValueObjectBase.Equals)
-  - [ValueObjectBase.operator ==](#ValueObjectBase.EqualityOperator)
-  - [ValueObjectBase.operator !=](#ValueObjectBase.InequalityOperator)
-- [Specification](#Specification)
+- [Support to ](#support-to-)
+- [How to use ](#how-to-use-)
+    - [Install NuGet package](#install-nuget-package)
+  - [Interfaces ](#interfaces-)
+  - [EntityBase ](#entitybase-)
+    - [EntityBase.Equals() ](#entitybaseequals-)
+    - [EntityBase.operator == ](#entitybaseoperator--)
+    - [EntityBase.operator != ](#entitybaseoperator---1)
+    - [EntityComparer ](#entitycomparer-)
+  - [ValueObjectBase ](#valueobjectbase-)
+    - [ValueObjectBase.Equals() ](#valueobjectbaseequals-)
+    - [ValueObjectBase.operator == ](#valueobjectbaseoperator--)
+    - [ValueObjectBase.operator != ](#valueobjectbaseoperator---1)
+  - [Specification ](#specification-)
 - [Contribution](#contribution)
-- [License](./LICENSE)
-- [Changelog](./CHANGELOG.md)
 
 
 
